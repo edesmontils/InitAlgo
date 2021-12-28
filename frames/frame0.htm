@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<script type="text/javascript" src="../javascript/frame0.js"></script>
+</head>
+
+<body id='body-menus'>
+<!-- bouton executer -->
+	<img align="top" src="images/executer.png" style='cursor:pointer;'  alt="Executer"  onclick="exe(parent.frames['droit_haut'].window.document.getElementById('body'));" width="20" />
+
+<!-- bouton enregistrer -->
+	<img align="top" src="images/enregistrer.png" style='cursor:pointer;'  alt="Sauvegarder"  onclick="save(parent.frames['droit_haut'].window.document.getElementById('body'));" width="20" />
+
+<!-- bouton d'aide, qui ouvre un popup contenant une page d'aide -->
+	<img align="top" title="Aide" src="images/aide.png" style='cursor:pointer;height:25;' alt="Aide" onclick="popup('tuto.htm');" width="20" />
+  
+<!-- a propos -->
+	<img title="A propos"  align="top" src="images/apropos.png" style='cursor:pointer;height:25;' alt="A propos" onclick="popup('apropo.htm');" width="20" />
+	
+	<form>
+		Nom de l'algorithme : <input type='text' name='nom-algo' id='nom-algo' value="algo"/>
+	</form>
+
+</body>
+</html>

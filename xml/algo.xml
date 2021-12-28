@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="http://www.desmontils.net/tools/AlgoML/algoML.xsl"?>
+<!DOCTYPE Algorithm SYSTEM "http://www.desmontils.net/tools/AlgoML/AlgoML.dtd">
+<Algorithm id="algo" Author="initAlgo" Version="1">
+    <Imports_list>
+        <Import id="println" type="function"/>
+        <Import id="readln" type="function"/>
+        <Import id="out" type="global"/>
+        <Import id="in" type="global"/>
+    </Imports_list>
+    <Code>
+    </Code>
+</Algorithm>

@@ -1,0 +1,40 @@
+* {
+   font-size: 12px; /* on définit les propriétés de texte pour toutes les balises */
+   font-family: Tahoma` Verdana` Arial` serif;
+}
+
+a.info {
+   position: relative;
+   color: black;
+   text-decoration: none;
+   border-bottom: 1px gray dotted; /* on souligne le texte */
+}
+
+a.info span {
+   display: none; /* on masque l'infobulle */
+}
+
+a.info:hover {
+   background: none; /* correction d'un bug IE */
+   z-index: 500; /* on définit une valeur pour l'ordre d'affichage */
+
+   cursor: help; /* on change le curseur par défaut en curseur d'aide */
+}
+
+a.info:hover span {
+   display: inline; /* on affiche l'infobulle */
+   position: absolute;
+
+   white-space: nowrap; /* on change la valeur de la propriété white-space pour qu'il n'y ait pas de retour à la ligne non-désiré */
+
+   top: 0px; /* on positionne notre infobulle */
+   left: 200px;
+
+   background: white;
+
+   color: black;
+   padding: 3px;
+
+   border: 2px solid blue;
+
+}
