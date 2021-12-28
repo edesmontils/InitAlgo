@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- XML DTD for Algorithms -->
+<!-- (c) E. Desmontils, Jul 2008 -->
+<!-- Created: 14/02/03 -->
+<!-- Last Mod: 06/11/08 -->
+<!-- Version 1.3 -->
+
+<!ELEMENT Algorithm (Imports_list?, (Function | Procedure)*, VarDecl?, Code?)>
+<!ATTLIST Algorithm
+          id        ID        #REQUIRED
+          name      CDATA 	  #REQUIRED
+          Author    CDATA     #IMPLIED
+          Comment   CDATA     #IMPLIED
+          Version   CDATA     #REQUIRED>
+          
+<!ELEMENT Imports_list  (Import)*>
+
+<!ELEMENT Import EMPTY>
+<!ATTLIST Import
+                id ID #REQUIRED
+                uri CDATA #IMPLIED
+                type (function|global) #REQUIRED>
+
+<!ELEMENT Function (ParamDecl?, LocVarDecl?, Code, RetValue)>
+<!ATTLIST Function
+          id        ID        #REQUIRED
+          Comment   CDATA     #IMPLIED
+          PreCondition  CDATA #REQUIRED
+          PostCondition CDATA #REQUIRED>
+
+<!ELEMENT Procedure (ParamDecl?, LocVarDecl?, Code)>
+<!ATTLIST Procedure
+          id        ID        #REQUIRED
+          Comment   CDATA     #IMPLIED
+          PreCondition  CDATA #REQUIRED
+          PostCondition CDATA #REQUIRED>
+
+<!ELEMENT ParamDecl (Param)+>
+
+<!ELEMENT RetValue EMPTY>
+<!ATTLIST RetValue
+          Var      IDREF      #REQUIRED>
+
+<!ELEMENT Param EMPTY>
+<!ATTLIST Param
+          id       ID         #REQUIRED
+          Status   (In|Out|InOut)  "In"
+          Type     CDATA      #REQUIRED 
+          Comment  CDATA      #IMPLIED><!-- Type :  un type XML Schema -->
+
+<!ELEMENT LocVarDecl (Var+)>
+<!ELEMENT VarDecl (Var+)>
+
+<!ELEMENT Var EMPTY>
+<!ATTLIST Var
+          id       ID         #REQUIRED
+          Type     CDATA      #REQUIRED 
+          Comment  CDATA      #IMPLIED><!-- Type : un type XML Schema -->
+
+<!ELEMENT Code    (For|For-C|Repeat|While|Switch|Call|Assert|Let|If|Code)*>
+
+<!ELEMENT Let (#PCDATA)>  <!-- Du MathML pour l'expression par exemple ? -->
+<!ATTLIST Let
+          Var  IDREF  #REQUIRED
+          Comment CDATA #IMPLIED>
+
+<!ELEMENT Skip EMPTY>
+
+<!ELEMENT Assert (#PCDATA)>
+<!ATTLIST Assert
+          Comment   CDATA #IMPLIED>
+
+<!ELEMENT For (Code)>
+<!ATTLIST For
+          Var     IDREF   #REQUIRED
+          FirstValue CDATA  #REQUIRED
+          LastValue  CDATA  #REQUIRED
+          Comment  CDATA #IMPLIED
+          Evol   (TO|DOWNTO)   "TO">
+          
+<!ELEMENT For-C (Let, Cond, Code, Let) > <!-- Init, Cond, Code, Incr -->
+<!ATTLIST For-C Comment CDATA #IMPLIED >
+
+<!ELEMENT While (Cond, Code)>
+<!ATTLIST While
+          Comment  CDATA   #IMPLIED>
+
+<!ELEMENT Repeat (Code,Cond)>
+<!ATTLIST Repeat
+          Comment  CDATA   #IMPLIED>
+
+<!ELEMENT Cond (#PCDATA)>   <!-- en booleen, XML Schema / MathML -->
+
+<!ELEMENT Switch (Item*,DefaultItem?)>
+<!ATTLIST Switch
+          Var     IDREF   #REQUIRED
+          Comment  CDATA #IMPLIED>
+
+<!ELEMENT Item (PossVal+, Code)>
+
+<!ELEMENT PossSet (#PCDATA)>
+<!ELEMENT PossVal (#PCDATA)>
+
+<!ELEMENT DefaultItem (Code)>
+
+<!ELEMENT Call (ParamVal*)>
+<!ATTLIST Call
+          name    IDREF   #REQUIRED    
+          Comment  CDATA  #IMPLIED><!-- name : XPath/XPointer/XLink pour acceder a des fonctions externes -->
+
+<!ELEMENT ParamVal  ( #PCDATA)>
+<!--ELEMENT ParamVal   EMPTY-->
+<!ATTLIST ParamVal   
+          name   IDREF   #IMPLIED
+          Comment  CDATA  #IMPLIED>
+
+<!ELEMENT If   (Cond,Then,Else?)>
+<!ATTLIST If
+          Comment   CDATA   #IMPLIED>
+
+<!ELEMENT Then  (Code)>
+<!ATTLIST Then
+          Comment   CDATA   #IMPLIED>
+
+<!ELEMENT Else  (Code)>
+<!ATTLIST Else
+          Comment   CDATA   #IMPLIED>

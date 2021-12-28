@@ -365,7 +365,7 @@ function Montrerfils(Conteneur){
 		
 //====================================================================================================
 function InitialisePage(BlockX,BlockY,BlockLongueur,BlockHauteur){		  
-	Conteneur = document.getElementById("body");	
+	Conteneur = document.getElementById("body-main");	
 	CreerBlock(Conteneur,'blockPrincipal','block',BlockX,BlockY,BlockLongueur,BlockHauteur);
 	DebutX = BlockX + (BlockLongueur / 2) - (debut.width / 2);
 	DebutY = BlockY - debut.height;
@@ -602,7 +602,7 @@ function RedessineEntreeSortie(Conteneur, s){
 //====================================================================================================		
 function RedessineParent(Conteneur){			
 	if  (Conteneur!=null)  {
-		if ((Conteneur != document.getElementById("body")) ){
+		if ((Conteneur != document.getElementById("body-main")) ){
 		//on redessine ce block
 		if (Conteneur.title == 'Tant que...faire...'){RedessineTantQueFaire(Conteneur);}
 		else if (Conteneur.title == 'super block'){ RedessineSuperBlock(Conteneur); }
@@ -1103,3 +1103,5 @@ function selectionbody(){
 	selection=null;
 	parent.frames["gauche"].window.document.getElementsByTagName('td')[0].innerHTML = "";
 }
+
+

@@ -1,24 +1,31 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<link href="../../dvd_d.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="../javascript/memory.js"></script>
 	<script type="text/javascript" src="../javascript/frame0.js"></script>
 </head>
 
 <body id='body-menus'>
 <!-- bouton executer -->
-	<img align="top" src="images/executer.png" style='cursor:pointer;'  alt="Executer"  onclick="exe(parent.frames['droit_haut'].window.document.getElementById('body'));" width="20" />
+	<img align="top" title="Exécuter" src="images/executer.png" style='cursor:pointer;'  alt="Executer"  onclick="exe(parent.frames['droit_haut'].window.document.getElementById('body-main'));" width="20" />
 
 <!-- bouton enregistrer -->
-	<img align="top" src="images/enregistrer.png" style='cursor:pointer;'  alt="Sauvegarder"  onclick="save(parent.frames['droit_haut'].window.document.getElementById('body'));" width="20" />
+	<img align="top" title="Enregistrer" src="images/enregistrer.png" style='cursor:pointer;'  alt="Enregistrer"  onclick="saveAlgo(parent.frames['droit_haut'].window.document.getElementById('body-main'),document.FormAlgo.nomAlgo,document.FormAlgo.idAlgo);" width="20" />
+<!-- bouton charger -->
+	<img align="top" title="Charger" src="images/charger.png" style='cursor:pointer;'  alt="Charger"  onclick="loadAlgo(parent.frames['droit_haut'].window.document.getElementById('body-main'),document.FormAlgo.nomAlgo,document.FormAlgo.idAlgo);" width="20" />
+<!-- bouton charger -->
+	<img align="top" title="Imprimer" src="images/print.png" style='cursor:pointer;'  alt="Imprimer"  onclick="seeAlgo(parent.frames['droit_haut'].window.document.getElementById('body-main'),document.FormAlgo.nomAlgo,document.FormAlgo.idAlgo);" width="20" />
 
-<!-- bouton d'aide, qui ouvre un popup contenant une page d'aide -->
-	<img align="top" title="Aide" src="images/aide.png" style='cursor:pointer;height:25;' alt="Aide" onclick="popup('tuto.htm');" width="20" />
+<!-- bouton d'aide, qui ouvre un popup contenant une page d'aide-->
+	<img align="top" title="Aide" src="images/aide.png" style='cursor:pointer;' alt="Aide" onclick="popup('../Ch_d_Sec0.htm');" width="20" />
   
-<!-- a propos -->
-	<img title="A propos"  align="top" src="images/apropos.png" style='cursor:pointer;height:25;' alt="A propos" onclick="popup('apropo.htm');" width="20" />
+<!-- a propos >
+	<img title="A propos"  align="top" src="images/apropos.png" style='cursor:pointer;height:25;' alt="A propos" onclick="popup('apropo.htm');" width="20" /-->
 	
-	<form>
-		Nom de l'algorithme : <input type='text' name='nom-algo' id='nom-algo' value="algo"/>
+	<form name="FormAlgo">
+		Nom de l'algorithme : <input type='text' name='nomAlgo' id='nomAlgo' value="algo"/>
+		Identifiant (id) : <input type='text' name='idAlgo' id='idAlgo' value=""/>		
 	</form>
 
 </body>

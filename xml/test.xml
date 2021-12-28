@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<!--  -->
+<?xml-stylesheet type='text/xsl' href='http://localhost:8888/PHP/init/initAlgo/xml/AlgoML.xsl'?>
+<!DOCTYPE Algorithm SYSTEM 'http://localhost:8888/PHP/init/initAlgo/xml/AlgoML.dtd' >
+<Algorithm id="algo" name="algo" Author="initAlgo" Version="1">
+  <Imports_list>
+    <Import id="println" type="function"/>
+    <Import id="readln" type="function"/>
+    <Import id="out" type="global"/>
+    <Import id="in" type="global"/>
+  </Imports_list>
+  <Code>
+  </Code>
+</Algorithm>

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Intitiation à l'algorithmique</title>
+	<link href="../dvd_d.css" rel="stylesheet" type="text/css" />
+	<script src="../javascript/fenetres.js"></script>
+</head>
+
+<body>
+<h1>Initiation à l'algorithmique</h1>
+
+
+<h2>1. Présentation</h2>
+
+<p>Ce petit programme vise à aider les étudiants à comprendre l'algorithmique en le manipulant de manière graphique. Cet outil ne vise pas à faire n'importe quel programme. L'objectif est de comprendre la construction d'un algorithme, l'utilisation des structures de base et l'exécuter un algorithme simple.</p>
+  
+<p> Attention, cette application est très rudimentaire. De plus, elle ne fonctionne correctement pour l'instant qu'avec Firefox.</p>
+
+<h2>2. Aide</h2>
+<h3>2.1 Les variables.</h3>
+<p>Ce sont des espaces de stockage pour un résultat (nombre, chaîne ou booléen). Elles sont identifiées par leurs noms qui doivent être constitué d'au moins une lettre, suivie de lettres ou de chiffres ou du caractères souligné "_".</p>
+<p>Attention, ne jamais mettre d'espace dans un nom de variable.</p>
+<p>Exemple correcte : ma_variable, maVariable44, Ma44emevariable.</p>
+<p>Exemple incorrecte : ma variable, 44variable, Ma 44 eme variable.</p>
+
+<h3>2.2 Les constantes.</h3>
+
+<p>Une constante est un mot qui désigne une valeur d'un type prédéfini dont la valeur est inchangeable lors de l'exécution du programme. On trouve les constantes booléennes, chaînes de caractères et nombre.</p>
+
+<ol>
+<li> Les constantes booléennes :
+Ce sont les deux mots Vrai et Faux </li>
+
+<li> Les chaînes de caractères :
+On utilise des doubles quottes pour délimiter les extrémités de la chaîne.
+Exemple : "Ceci est une chaîne de caractère !" </li>
+
+<li> Les nombres :
+Les entiers et les réels s'écrivent sous la forme mathématique habituelle.<br/>
+Exemple : 10, -5, 4.2, -9.457, 0.5<br/>
+Il existe également la constante PI qui vaut environ 3.14</li>
+</ol>
+
+<h3>2.3 Les opérateurs.</h3>
+
+<p>Les expressions sont construites à partir d'un ensemble d'opérateurs. On distingue les opérateurs arithmétiques, relationnels, logiques et de concaténation.</p>
+
+<ol>
+<li>Les opérateurs arithmétiques :
+Ce sont les 4 opérations basiques : +, -, * et /<br/>
+Exemple : 5 + 2 - ( 3*(4 + 3 / 2) ) <br/>
+On a également les opérateurs DIV et MOD pour les nombres entiers, qui représentent le quotient et le reste de la division entière.<br/>
+Exemple : 21 MOD 5 donnera 1 car 4 * 5 + 1 = 21<br/>
+Et 21 DIV 5 donnera 4 </li>
+ 
+<li>Les opérateurs relationnels :
+Les opérateurs relationnels permettent de comparer des valeurs.
+Ce sont : &lt; , &gt; , &le; , &ge; , = et différent qui se note != <br/>
+Exemple : 5 &le; 10 vaut Vrai<br/>
+Attention, on ne peut pas avoir une expression de la forme a &lt; b &lt; c !<br/>
+En effet, a &lt; b donne Vrai ou Faux, or Vrai &lt; c et Faux &lt; c n'a aucun sens...</li>
+
+<li>Les opérateurs logiques :
+Les opérateurs logiques portent sur les booléens. Ce sont le OU logique, le ET logique et la négation logique NON.
+Exemple : <br/>
+- 5 &le; 10 ET 2+5 != 7 vaux Faux<br/>
+- NON 2+5 != 7 vaux Vrai</li>
+
+<li>Les opérateurs de concaténation :
+L'opérateur + permet également de concaténer (fusionner) deux chaînes de caractères.<br/>
+Exemple : "Début phrase "+"Fin phrase" donnera la chaîne "Début phrase Fin phrase".<br/>
+Il peut être utile de concaténer plusieurs types de donnée à l'aide d'une virgule.
+Exemple : <br/>
+- "3+4 = ",3+4 donnera la chaîne "3+4 = 7"<br/>
+- "5 est différent de 5 : ", 5 != 5, ". non (5 !=5) vaut : ", non (5 !=5) <br/>
+Ce qui donnera la chaîne : "5 est différent de 5 : faux.  non (5 !=5) vaut : vrai"</li>
+</ol>
+
+<h3>2.5 Les priorités.</h3>
+
+<p>Les opérateurs arithmétiques sont de priorité supérieure aux opérateurs relationnels, eux-mêmes de priorité supérieur aux opérateurs logiques. 
+Ainsi, l'expression : x * y &gt; 10 ET x - y &lt; 0 est vue comme, ((x * y) &gt; 10) ET ((x - y) &lt; 0)</p>
+
+<h3>2.5 Les fonctions mathématiques.</h3>
+
+<p>Nous avons 9 fonctions mathématiques disponibles, leurs utilisations sont explicitées ci-dessous.</p>
+
+<ol>
+<li> Racine carrée :
+De la forme Racine( valeur ) .<br/>
+Exemple :  Racine( 25 ) donnera 5,  racine( 16 ) + 6 donnera 10</li>
+
+<li> Exponentielle :
+De la forme Exp( valeur ) .<br/>
+Exemple : Exp( 3 ) donnera environ 20,  exp( 2+1 ) *2 donnera environ 40</li>
+
+<li> Logarithme népérien :
+De la forme Ln( valeur ) .<br/>
+Exemple : Ln(  20 ) donnera environ 3.</li>
+
+<li> Fonctions trigonométriques :
+De la forme Cos( valeur ), Sin( valeur ) et Tan( valeur ) .<br/>
+La valeur en paramètre doit être donnée en radian.
+Rappelle de conversion :<br/>
+Angle en radian = pi * (angle en degré) / 180<br/>
+Angle en degré = 180 * (angle en radian) / pi<br/>
+Exemple :<br/>
+Pour Cosinus, Cos(30) donnera environ 0.15 <br/>
+Pour Sinus, Sin(30) donnera environ -0.98<br/>
+Pour Tangente, Tan(30) donnera environ -6.40</li>
+
+<li> Absolue :
+De la forme Abs( valeur ) .<br/>
+Exemple : Abs( 15 ) donnera 15 et Abs( - 15 ) donnera aussi 15</li>
+
+<li> Puissance :
+De la forme a^b signifie : a à la puissance b.<br/>
+Exemple : 3^2 donnera 9, -2^4 donnera -16 et (-2)^4 donnera 16</li>
+
+<li> Factorielle :
+De la forme valeur ! .<br/>
+Exemple : 5! donnera 120 car 5*4*3*2*1 = 120 , -5! donnera -120</li>
+</ol>
+
+<h2>3. Auteurs</h2>
+
+<p>Emmanuel Desmontils. Pour toute remarque, mon courriel : 
+<a href="mailto:Emmanuel.Desmontils@univ-nantes.fr">Emmanuel.Desmontils@univ-nantes.fr</a></p>
+
+<p>Sébastien Aubert et Frédéric Bouvet dans le cadre d'un travail proposé par l'université de Nantes en premiere année de master d'informatique. Année 2007-2008.</p>
+
+<hr/>
+<p>(c) E. Desmontils, Université de Nantes, novembre 2008</p>
+
+
+</body>
+</html>
